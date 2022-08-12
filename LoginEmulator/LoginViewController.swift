@@ -20,8 +20,13 @@ class LoginViewController: UIViewController {
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super .touchesBegan(touches, with: event)
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if userTextField.text == "User" && passwordTextField.text == "Password"  {
+            return true
+        }else {
+            showAlert(with: "Wrong Credentials", and: "Please check you login and password")
+            return false
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,14 +36,13 @@ class LoginViewController: UIViewController {
         welcomeVC?.nickName = nickName
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+    }
+    
 // MARK: - IBActions
     
     @IBAction func loginButtonPressed() {
-        if passwordTextField.text == "User" {
-            print("Yes")
-        }else {
-            print("No")
-        }
     }
 
     @IBAction func forgotNameButtonPressed() {
