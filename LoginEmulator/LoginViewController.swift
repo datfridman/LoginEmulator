@@ -31,6 +31,8 @@ class LoginViewController: UIViewController {
         welcomeVC?.nickName = nickName
     }
     
+// MARK: - IBActions
+    
     @IBAction func loginButtonPressed() {
         if passwordTextField.text == "User" {
             print("Yes")
@@ -54,22 +56,19 @@ class LoginViewController: UIViewController {
 }
 
 // MARK: - AlertController
+
 extension LoginViewController {
     private func showAlert(with title: String, and massage: String) {
         let alert = UIAlertController(
             title: title,
             message: massage,
             preferredStyle: .alert)
- 
- // Setup Button
+        
         let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
             self.passwordTextField.text = ""
         }
-    
-// Add Button
+        
         alert.addAction(okAction)
-
-// Show Alert
         present(alert, animated: true)
     }
 }
