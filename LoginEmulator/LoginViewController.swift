@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var forgotUsernameButton: UIButton!
     @IBOutlet var forgotPasswordButton: UIButton!
     
+    @IBOutlet var userTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
     override func viewDidLoad() {
@@ -23,22 +24,36 @@ class LoginViewController: UIViewController {
         super .touchesBegan(touches, with: event)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nickName = userTextField.text ?? ""
+        let welcomeVC = segue.destination as? WelcomeViewController
+        
+        welcomeVC?.nickName = nickName
+    }
     
     @IBAction func loginButtonPressed() {
-        
+        if passwordTextField.text == "User" {
+            print("Yes")
+        }else {
+            print("No")
+        }
     }
 
     @IBAction func forgotNameButtonPressed() {
-        showAlert(with: "Your username", and: "Use User as your login")
+        showAlert(with: "🥲 Oups", and: "Your login is User")
     }
     
     @IBAction func forgotPassButtonPressed() {
-        showAlert(with: "Your password", and: "Use Password as your pass")
+        showAlert(with: "🔐 Password", and: "Your password is Password")
+    }
+    
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        passwordTextField.text = ""
+        userTextField.text = ""
     }
 }
 
-// MARK: - UIAlertController
+// MARK: - AlertController
 extension LoginViewController {
     private func showAlert(with title: String, and massage: String) {
         let alert = UIAlertController(
