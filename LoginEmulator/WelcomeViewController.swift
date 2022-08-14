@@ -9,9 +9,9 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    var nickName: String = ""
-    
     @IBOutlet var welcomeLabel: UILabel!
+    
+    var nickName: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()

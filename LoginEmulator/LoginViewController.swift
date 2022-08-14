@@ -15,11 +15,6 @@ class LoginViewController: UIViewController {
     @IBOutlet var userTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if userTextField.text == "User" && passwordTextField.text == "Password"  {
             return true
@@ -30,20 +25,18 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nickName = userTextField.text ?? ""
-        let welcomeVC = segue.destination as? WelcomeViewController
+        guard let nickName = userTextField.text else { return }
+        let welcomeVC = segue.destination as! WelcomeViewController
         
-        welcomeVC?.nickName = nickName
+        welcomeVC.nickName = nickName
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
 // MARK: - IBActions
-    
-    @IBAction func loginButtonPressed() {
-    }
 
     @IBAction func forgotNameButtonPressed() {
         showAlert(with: "🥲 Oups", and: "Your login is User")
