@@ -14,6 +14,8 @@
 		CD2C37AC28A5A45400EE9DEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2C37AB28A5A45400EE9DEF /* Assets.xcassets */; };
 		CD2C37AF28A5A45400EE9DEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2C37AD28A5A45400EE9DEF /* LaunchScreen.storyboard */; };
 		CD2C37B728A5A68600EE9DEF /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C37B628A5A68600EE9DEF /* WelcomeViewController.swift */; };
+		CD6DB6CE28B1A63800388F36 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DB6CD28B1A63800388F36 /* AboutViewController.swift */; };
+		CD6DB6D028B1AC4100388F36 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DB6CF28B1AC4100388F36 /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		CD2C37AE28A5A45400EE9DEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD2C37B028A5A45400EE9DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD2C37B628A5A68600EE9DEF /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		CD6DB6CD28B1A63800388F36 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		CD6DB6CF28B1AC4100388F36 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,58 @@
 		CD2C37A128A5A45300EE9DEF /* LoginEmulator */ = {
 			isa = PBXGroup;
 			children = (
-				CD2C37A228A5A45300EE9DEF /* AppDelegate.swift */,
-				CD2C37A428A5A45300EE9DEF /* SceneDelegate.swift */,
-				CD2C37A628A5A45300EE9DEF /* LoginViewController.swift */,
-				CD2C37B628A5A68600EE9DEF /* WelcomeViewController.swift */,
-				CD2C37A828A5A45300EE9DEF /* Main.storyboard */,
-				CD2C37AB28A5A45400EE9DEF /* Assets.xcassets */,
-				CD2C37AD28A5A45400EE9DEF /* LaunchScreen.storyboard */,
+				CD6DB6C928B15A5700388F36 /* Models */,
+				CD6DB6C828B15A0500388F36 /* ViewControllers */,
+				CD6DB6CA28B15A8D00388F36 /* Storyboards */,
+				CD6DB6CC28B1A3C900388F36 /* Resources */,
+				CD6DB6D128B1AC6E00388F36 /* SupportingFiles */,
 				CD2C37B028A5A45400EE9DEF /* Info.plist */,
 			);
 			path = LoginEmulator;
+			sourceTree = "<group>";
+		};
+		CD6DB6C828B15A0500388F36 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD2C37A628A5A45300EE9DEF /* LoginViewController.swift */,
+				CD2C37B628A5A68600EE9DEF /* WelcomeViewController.swift */,
+				CD6DB6CD28B1A63800388F36 /* AboutViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CD6DB6C928B15A5700388F36 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD6DB6CF28B1AC4100388F36 /* UserData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD6DB6CA28B15A8D00388F36 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CD2C37A828A5A45300EE9DEF /* Main.storyboard */,
+				CD2C37AD28A5A45400EE9DEF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CD6DB6CC28B1A3C900388F36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD2C37AB28A5A45400EE9DEF /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CD6DB6D128B1AC6E00388F36 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CD2C37A228A5A45300EE9DEF /* AppDelegate.swift */,
+				CD2C37A428A5A45300EE9DEF /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD6DB6D028B1AC4100388F36 /* UserData.swift in Sources */,
 				CD2C37A728A5A45300EE9DEF /* LoginViewController.swift in Sources */,
 				CD2C37B728A5A68600EE9DEF /* WelcomeViewController.swift in Sources */,
 				CD2C37A328A5A45300EE9DEF /* AppDelegate.swift in Sources */,
+				CD6DB6CE28B1A63800388F36 /* AboutViewController.swift in Sources */,
 				CD2C37A528A5A45300EE9DEF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
