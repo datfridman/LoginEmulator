@@ -9,10 +9,23 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var surnameLabel: UILabel!
+    @IBOutlet var ageLabel: UILabel!
+    @IBOutlet var companyLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var userPhoto: UIImageView!
+    
+    var user = Person.getPerson()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        nameLabel.text = user.name
+        surnameLabel.text = user.surname
+        ageLabel.text = String(user.age)
+        companyLabel.text = user.company
+        titleLabel.text = user.title
+        userPhoto.image = UIImage(named: user.photo)
     }
     
 
